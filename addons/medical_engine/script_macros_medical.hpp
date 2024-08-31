@@ -49,7 +49,7 @@
 // 0.077 l/kg * 80kg = 6.16l
 #define DEFAULT_BLOOD_VOLUME 6.0 // in liters
 
-#define BLOOD_VOLUME_CLASS_1_HEMORRHAGE 6.000 // lost less than 15% blood, Class I Hemorrhage
+#define BLOOD_VOLUME_CLASS_1_HEMORRHAGE 5.600 // lost less than 15% blood, Class I Hemorrhage. With some buffer room.
 #define BLOOD_VOLUME_CLASS_2_HEMORRHAGE 5.100 // lost more than 15% blood, Class II Hemorrhage
 #define BLOOD_VOLUME_CLASS_3_HEMORRHAGE 4.200 // lost more than 30% blood, Class III Hemorrhage
 #define BLOOD_VOLUME_CLASS_4_HEMORRHAGE 3.600 // lost more than 40% blood, Class IV Hemorrhage

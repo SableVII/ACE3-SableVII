@@ -30,7 +30,7 @@ private _showNextTick = missionNamespace getVariable [QGVAR(showPainNextTick), t
 GVAR(showPainNextTick) = !_showNextTick;
 if (_showNextTick) exitWith {};
 
-private _blurIntensity = linearConversion [0.8, 1, _intensity, 0, 1, true];
+private _blurIntensity = linearConversion [0.3, 1, _intensity, 0, 1, true];
 GVAR(ppPainBlur) ppEffectAdjust [_blurIntensity];
 GVAR(ppPainBlur) ppEffectCommit 0.1;
 

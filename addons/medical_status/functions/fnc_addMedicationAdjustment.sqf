@@ -32,3 +32,12 @@ private _adjustments = _unit getVariable [VAR_MEDICATIONS, []];
 _adjustments pushBack [_medication, CBA_missionTime, _timeToMaxEffect, _maxTimeInSystem, _hrAdjust, _painAdjust, _flowAdjust];
 
 _unit setVariable [VAR_MEDICATIONS, _adjustments, true];
+
+// Force wake up unit if they are unconscious and in stable condition and given an "Epinephrine"
+if (_unit getVariable ["ACE_isUnconscious", false] == true && _medication == "Epinephrine") then {
+	private _inStableCondition = [_unit] call EFUNC(medical_status,hasStableVitals);
+	
+	if (_inStableCondition) then {	
+		[_unit, false] call EFUNC(medical,setUnconscious);
+	};
+};

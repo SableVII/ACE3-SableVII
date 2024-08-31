@@ -35,7 +35,7 @@ if (_syncValues) then {
 [_unit, _deltaT, _syncValues] call FUNC(updateOxygen);
 
 private _bloodVolume = GET_BLOOD_VOLUME(_unit) + ([_unit, _deltaT, _syncValues] call EFUNC(medical_status,getBloodVolumeChange));
-_bloodVolume = 0 max _bloodVolume min DEFAULT_BLOOD_VOLUME;
+_bloodVolume = 2.9 max _bloodVolume min DEFAULT_BLOOD_VOLUME; // Don't let units fall way too low of blood. But enough for AI to succumb to their bloodloss.
 
 // @todo: replace this and the rest of the setVariable with EFUNC(common,setApproximateVariablePublic)
 _unit setVariable [VAR_BLOOD_VOL, _bloodVolume, _syncValues];

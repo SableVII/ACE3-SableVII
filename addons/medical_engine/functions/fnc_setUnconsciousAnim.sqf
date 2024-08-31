@@ -26,6 +26,10 @@ if (!local _unit) exitWith {
 _unit setUnconscious _isUnconscious;
 
 if (_isUnconscious) then {
+	if (isPlayer _unit) then {
+		_unit switchCamera "EXTERNAL";
+	};
+
     // eject from static weapon
     if (vehicle _unit isKindOf "StaticWeapon" && {!(vehicle _unit isKindOf "Pod_Heli_Transport_04_crewed_base_F")}) then {
         TRACE_2("ejecting from static weapon",_unit,vehicle _unit);
@@ -39,6 +43,10 @@ if (_isUnconscious) then {
         [_unit, _unconAnim] call EFUNC(common,doAnimation);
     };
 } else {
+	if (isPlayer _unit) then {
+		_unit switchCamera "INTERNAL";
+	};
+
     // reset animation inside vehicles
     if (!isNull objectParent _unit) then {
         private _awakeAnim = _unit call EFUNC(common,getAwakeAnim);

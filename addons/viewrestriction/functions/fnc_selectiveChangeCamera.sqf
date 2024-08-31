@@ -19,6 +19,11 @@ params ["_cameraOn"];
 
 // Foot
 if (_cameraOn isKindOf "CAManBase") exitWith {
+	// Hopefully allow player to change camera when going unconscious regardless of view mode restriction
+	if (player == ACE_Player && ACE_Player == _cameraOn && ACE_Player getVariable ["ACE_isUnconscious", false] == true) exitWith {
+		//_cameraOn switchCamera "EXTERNAL";
+	};
+
     if (XGVAR(modeSelectiveFoot) == 1) exitWith {
         _cameraOn switchCamera "INTERNAL";
     };

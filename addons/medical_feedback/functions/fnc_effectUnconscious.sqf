@@ -18,6 +18,12 @@
 
 params ["_enable", "_mode"];
 
+
+// Help for Sable cuz oh my gosh:
+// GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.25], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
+//									   						      ^ right here: 0 means zero effect, 1 == full blackout effect
+//																									  ^ I believe the bits here shape the effect
+
 switch (_mode) do {
     // Instant (for Zeus or death)
     case 0: {
@@ -36,8 +42,8 @@ switch (_mode) do {
             GVAR(ppUnconsciousBlur)     ppEffectCommit 0;
             GVAR(ppUnconsciousBlackout) ppEffectCommit 0;
 
-            GVAR(ppUnconsciousBlur)     ppEffectAdjust [5];
-            GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 1], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
+            GVAR(ppUnconsciousBlur)     ppEffectAdjust [1];
+            GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.65], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
             GVAR(ppUnconsciousBlur)     ppEffectCommit FX_UNCON_FADE_IN;
             GVAR(ppUnconsciousBlackout) ppEffectCommit FX_UNCON_FADE_IN;
 
@@ -49,8 +55,8 @@ switch (_mode) do {
             GVAR(ppUnconsciousBlackout) ppEffectEnable true;
 
             // Step 1: Widen eye "hole"
-            GVAR(ppUnconsciousBlur)     ppEffectAdjust [5];
-            GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.9], [0, 0, 0, 1], [0, 0, 0, 0], [0.51, 0.17, 0, 0, 0, 0, 1]];
+            GVAR(ppUnconsciousBlur)     ppEffectAdjust [1];
+            GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.3], [0, 0, 0, 1], [0, 0, 0, 0], [0.51, 0.17, 0, 0, 0, 0, 1]];
             GVAR(ppUnconsciousBlur)     ppEffectCommit (FX_UNCON_FADE_OUT * 1/3);
             GVAR(ppUnconsciousBlackout) ppEffectCommit (FX_UNCON_FADE_OUT * 1/3);
 
@@ -58,8 +64,8 @@ switch (_mode) do {
             [{
                 if (!isNull curatorCamera || {!alive ACE_player}) exitWith {};
 
-                GVAR(ppUnconsciousBlur)     ppEffectAdjust [0];
-                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.8], [0, 0, 0, 1], [0, 0, 0, 0], [0.7, 0.78, 0, 0, 0, 0, 1]];
+                GVAR(ppUnconsciousBlur)     ppEffectAdjust [0.1];
+                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.1], [0, 0, 0, 1], [0, 0, 0, 0], [0.7, 0.38, 0, 0, 0, 0, 1]];
                 GVAR(ppUnconsciousBlur)     ppEffectCommit (FX_UNCON_FADE_OUT * 2/3);
                 GVAR(ppUnconsciousBlackout) ppEffectCommit (FX_UNCON_FADE_OUT * 1/3);
             }, [], FX_UNCON_FADE_OUT * 1/3] call CBA_fnc_waitAndExecute;
@@ -68,7 +74,7 @@ switch (_mode) do {
             [{
                 if (!isNull curatorCamera || {!alive ACE_player}) exitWith {};
 
-                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0], [0, 0, 0, 1], [0, 0, 0, 0], [0.7, 0.78, 0, 0, 0, 0, 1]];
+                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.025], [0, 0, 0, 1], [0, 0, 0, 0], [0.7, 0.78, 0, 0, 0, 0, 1]];
                 GVAR(ppUnconsciousBlackout) ppEffectCommit (FX_UNCON_FADE_OUT * 1/3);
             }, [], FX_UNCON_FADE_OUT * 2/3] call CBA_fnc_waitAndExecute;
         };
@@ -80,24 +86,27 @@ switch (_mode) do {
 
         if (_enable) then {
             if (GVAR(nextFadeIn) < CBA_missionTime) then {
-                GVAR(ppUnconsciousBlur) ppEffectAdjust [5];
-                GVAR(ppUnconsciousBlur) ppEffectCommit 0;
+                GVAR(ppUnconsciousBlur) ppEffectAdjust [0.1];
+                GVAR(ppUnconsciousBlur) ppEffectCommit (FX_UNCON_FADE_OUT * 2/3);
 
-                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.9], [0, 0, 0, 1], [0, 0, 0, 0], [0.51, 0.17, 0, 0, 0, 0, 1]];
+                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.15], [0, 0, 0, 1], [0, 0, 0, 0], [0.51, 0.17, 0, 0, 0, 0, 1]];
                 GVAR(ppUnconsciousBlackout) ppEffectCommit (FX_UNCON_FADE_OUT * 2/3);
 
                 [{
                     if (!isNull curatorCamera || {!alive ACE_player}) exitWith {};
 
-                    GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 1], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
+					GVAR(ppUnconsciousBlur) ppEffectAdjust [1];
+					GVAR(ppUnconsciousBlur) ppEffectCommit (FX_UNCON_FADE_OUT * 1/3);
+
+                    GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.65], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
                     GVAR(ppUnconsciousBlackout) ppEffectCommit (FX_UNCON_FADE_OUT * 1/3);
                 }, [], FX_UNCON_FADE_OUT * 2/3] call CBA_fnc_waitAndExecute;
 
                 ACE_player setVariable [QGVAR(effectUnconsciousTimeout), CBA_missionTime + FX_UNCON_FADE_OUT];
                 GVAR(nextFadeIn) = CBA_missionTime + FX_UNCON_FADE_OUT + 15 + random 5;
             } else {
-                GVAR(ppUnconsciousBlur)     ppEffectAdjust [5];
-                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 1], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
+                GVAR(ppUnconsciousBlur)     ppEffectAdjust [1];
+                GVAR(ppUnconsciousBlackout) ppEffectAdjust [1, 1, 0, [0, 0, 0, 0.65], [0, 0, 0, 1], [0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 1]];
                 GVAR(ppUnconsciousBlur)     ppEffectCommit 0;
                 GVAR(ppUnconsciousBlackout) ppEffectCommit 0;
             };
@@ -109,6 +118,6 @@ switch (_mode) do {
         };
 
         GVAR(ppUnconsciousBlur)     ppEffectEnable _enable;
-        GVAR(ppUnconsciousBlackout) ppEffectEnable _enable;
+        //GVAR(ppUnconsciousBlackout) ppEffectEnable _enable;
     };
 };
