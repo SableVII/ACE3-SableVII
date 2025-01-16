@@ -29,6 +29,10 @@ class CfgMagazines {
             };
         };
     };
+    class ACE_APERSMine_ToePopper_Mag: APERSMine_Range_Mag {
+        displayName = CSTRING(apersToePopper);
+        ammo = "ACE_APERSMine_ToePopper_Ammo";
+    };
     class APERSTripMine_Wire_Mag: ATMine_Range_Mag {
         GVAR(setupObject) = "ACE_Explosives_Place_APERSTripwireMine";
         class ACE_Triggers {
@@ -87,7 +91,7 @@ class CfgMagazines {
                 displayName = CSTRING(SLAME_Magnetic);
                 digDistance = 0;
                 ammo = "ACE_SLAMDirectionalMine_Magnetic_Ammo";
-                pitch = 90;
+                pitch = MINE_PITCH_UP;
             };
             class IRSensor {
                 displayName = CSTRING(SLAME_IRSensor);
