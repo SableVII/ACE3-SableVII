@@ -51,7 +51,7 @@ GVAR(bloodTickCounter) = 0;
 
     [_unconscious, 1] call FUNC(effectUnconscious);
     [true] call FUNC(handleEffects);
-    ["unconscious", _unconscious] call EFUNC(common,setDisableUserInputStatus);
+    //["unconscious", _unconscious] call EFUNC(common,setDisableUserInputStatus);
 }] call CBA_fnc_addEventHandler;
 
 // Reset volume upon death for spectators
@@ -75,7 +75,7 @@ GVAR(bloodTickCounter) = 0;
     private _volume = missionNamespace getVariable [QEGVAR(hearing,unconsciousnessVolume), VOL_UNCONSCIOUS];
     [QUOTE(ADDON), _volume, _status] call EFUNC(common,setHearingCapability);
     [true] call FUNC(handleEffects);
-    ["unconscious", _status] call EFUNC(common,setDisableUserInputStatus);
+    //["unconscious", _status] call EFUNC(common,setDisableUserInputStatus);
 }] call CBA_fnc_addPlayerEventHandler;
 
 // Update effects for featureCamera (curator, arsenal, etc)

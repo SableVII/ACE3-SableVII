@@ -14,66 +14,190 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             aimingBody = "aimingUpNo";
             head = "headNo";
 
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;
+
             file = QPATHTO_T(data\ace_unconscious_1.rtm);
         };
 
         class UNCON_ANIM(2): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_2.rtm);
         };
 
         class UNCON_ANIM(3): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_3.rtm);
         };
 
         class UNCON_ANIM(4): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;
+			
             file = QPATHTO_T(data\ace_unconscious_4.rtm);
         };
 
         class UNCON_ANIM(5): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;		
+			
             file = QPATHTO_T(data\ace_unconscious_5.rtm);
         };
 
         class UNCON_ANIM(6): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;		
+			
             file = QPATHTO_T(data\ace_unconscious_6.rtm);
         };
 
         class UNCON_ANIM(7): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_7.rtm);
         };
 
         class UNCON_ANIM(8): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;		
+			
             file = QPATHTO_T(data\ace_unconscious_8.rtm);
         };
 
         class UNCON_ANIM(1_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_1_1.rtm);
         };
 
         class UNCON_ANIM(2_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_2_1.rtm);
         };
 
         class UNCON_ANIM(3_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_3_1.rtm);
         };
 
         class UNCON_ANIM(4_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_4_1.rtm);
         };
 
         class UNCON_ANIM(5_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_5_1.rtm);
         };
 
         class UNCON_ANIM(6_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+			
             file = QPATHTO_T(data\ace_unconscious_6_1.rtm);
         };
 
         class UNCON_ANIM(7_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;		
+			
             file = QPATHTO_T(data\ace_unconscious_7_1.rtm);
         };
 
         class UNCON_ANIM(8_1): UNCON_ANIM(1) {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;		
+			
             file = QPATHTO_T(data\ace_unconscious_8_1.rtm);
         };
 
@@ -85,13 +209,45 @@ class CfgMovesMaleSdr: CfgMovesBasic {
         class UNCON_ANIM(10): KIA_driver_boat01 {};
 
         class Unconscious;
-        class UNCON_ANIM(faceDown): Unconscious {};
+        class UNCON_ANIM(faceDown): Unconscious {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
 
-        class UNCON_ANIM(faceLeft): Unconscious {};
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;
+		};
 
-        class UNCON_ANIM(faceRight): Unconscious {};
+        class UNCON_ANIM(faceLeft): Unconscious {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
 
-        class UNCON_ANIM(faceUp): Unconscious {};
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;
+		};
+
+        class UNCON_ANIM(faceRight): Unconscious {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;
+		};
+
+        class UNCON_ANIM(faceUp): Unconscious {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;
+		};
 
         class AmovPpneMstpSnonWnonDnon;
         class ACE_UnconsciousOutProne: AmovPpneMstpSnonWnonDnon {
@@ -107,6 +263,11 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             InterpolateTo[] = {"Unconscious",0.2};
             ConnectTo[] = {"AmovPpneMstpSnonWnonDnon",0.2};
             speed = 100;
+			
+			aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+            static = 1;			
         };
     };
 };

@@ -1,3 +1,5 @@
 run the command "hemtt.exe release" in a terminal with this project folder as the working directory.
 It will make a folder in the ".hemtt" folder called "release".
-Take the release folder and rename it "@whatever" and you can zip that up and send it to people 
+Take the release folder and rename it "@whatever" and you can zip that up and send it to people
+
+For ACE, the folder will just be in "release" not inside a .hemtt folder or anything 
