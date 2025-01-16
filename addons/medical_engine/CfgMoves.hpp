@@ -262,12 +262,7 @@ class CfgMovesMaleSdr: CfgMovesBasic {
             useIdles = 0;
             InterpolateTo[] = {"Unconscious",0.2};
             ConnectTo[] = {"AmovPpneMstpSnonWnonDnon",0.2};
-            speed = 100;
-			
-			aiming = "aimingNo";
-            aimingBody = "aimingUpNo";
-            head = "headNo";
-            static = 1;			
+            speed = 100;	
         };
     };
 };
