@@ -203,10 +203,27 @@ class CfgMovesMaleSdr: CfgMovesBasic {
 
         /* added for the "ace_unc" part */
         class KIA_passenger_boat_holdleft;
-        class UNCON_ANIM(9): KIA_passenger_boat_holdleft {};
+        class UNCON_ANIM(9): KIA_passenger_boat_holdleft {
+            aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;			
+		};
 
         class KIA_driver_boat01;
-        class UNCON_ANIM(10): KIA_driver_boat01 {};
+        class UNCON_ANIM(10): KIA_driver_boat01 
+		{
+			aiming = "aimingNo";
+            aimingBody = "aimingUpNo";
+            head = "headNo";
+
+            ConnectTo[] = {};
+            forceAim = 1;
+            static = 1;				
+		};
 
         class Unconscious;
         class UNCON_ANIM(faceDown): Unconscious {
