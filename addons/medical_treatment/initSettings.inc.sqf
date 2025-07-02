@@ -110,6 +110,15 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(treatmentTimeTrainedAutoinjector),
+    "SLIDER",
+    [LSTRING(TreatmentTimeTrainedAutoinjector_DisplayName), LSTRING(TreatmentTimeTrainedAutoinjector_Description)],
+    LSTRING(Category),
+    [0.1, 60, 5, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(treatmentTimeTourniquet),
     "SLIDER",
     [LSTRING(TreatmentTimeTourniquet_DisplayName), LSTRING(TreatmentTimeTourniquet_Description)],
@@ -119,9 +128,27 @@
 ] call CBA_fnc_addSetting;
 
 [
+    QGVAR(treatmentTimeTrainedTourniquet),
+    "SLIDER",
+    [LSTRING(TreatmentTimeTrainedTourniquet_DisplayName), LSTRING(TreatmentTimeTrainedTourniquet_Description)],
+    LSTRING(Category),
+    [0.1, 60, 7, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
     QGVAR(treatmentTimeSplint),
     "SLIDER",
     [LSTRING(TreatmentTimeSplint_DisplayName), LSTRING(TreatmentTimeSplint_Description)],
+    LSTRING(Category),
+    [0.1, 60, 7, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(treatmentTimeTrainedSplint),
+    "SLIDER",
+    [LSTRING(TreatmentTimeTrainedSplint_DisplayName), LSTRING(TreatmentTimeTrainedSplint_Description)],
     LSTRING(Category),
     [0.1, 60, 7, 1],
     true
@@ -250,7 +277,7 @@
     "LIST",
     [LSTRING(AllowSelfPAK_DisplayName), LSTRING(AllowSelfPAK_Description)],
     LSTRING(Category),
-    [[0, 1], [ELSTRING(common,No), ELSTRING(common,Yes)], 0],
+    [[0, 1, 2], [ELSTRING(common,No), ELSTRING(common,Yes), LSTRING(Doctors)], 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -295,7 +322,7 @@
     "LIST",
     [LSTRING(AllowSelfStitch_DisplayName), LSTRING(AllowSelfStitch_Description)],
     LSTRING(Category),
-    [[0, 1], [ELSTRING(common,No), ELSTRING(common,Yes)], 0],
+    [[0, 1, 2], [ELSTRING(common,No), ELSTRING(common,Yes), LSTRING(Doctors)], 0],
     true
 ] call CBA_fnc_addSetting;
 
@@ -331,7 +358,7 @@
     "LIST",
     [LSTRING(AllowSelfIV_DisplayName), LSTRING(AllowSelfIV_Description)],
     LSTRING(Category),
-    [[0, 1], [ELSTRING(common,No), ELSTRING(common,Yes)], 1],
+    [[0, 1, 2], [ELSTRING(common,No), ELSTRING(common,Yes), LSTRING(Doctors)], 1],
     true
 ] call CBA_fnc_addSetting;
 
@@ -339,6 +366,15 @@
     QGVAR(treatmentTimeIV),
     "SLIDER",
     [LSTRING(TreatmentTimeIV_DisplayName), LSTRING(TreatmentTimeIV_Description)],
+    LSTRING(Category),
+    [0.1, 60, 12, 1],
+    true
+] call CBA_fnc_addSetting;
+
+[
+    QGVAR(treatmentTimeTrainedIV),
+    "SLIDER",
+    [LSTRING(TreatmentTimeTrainedIV_DisplayName), LSTRING(TreatmentTimeTrainedIV_Description)],
     LSTRING(Category),
     [0.1, 60, 12, 1],
     true

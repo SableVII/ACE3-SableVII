@@ -4,7 +4,7 @@
  * Adds sit actions.
  *
  * Arguments:
- * 0: Seat <OBJECT/STRING>
+ * 0: Seat <OBJECT or STRING>
  *
  * Return Value:
  * None
@@ -64,8 +64,8 @@ if !((_sitPosition select 0) isEqualType []) then {
         format [QGVAR(Sit_%1), _forEachIndex],
         LLSTRING(Sit),
         QUOTE(PATHTOF(UI\sit_ca.paa)),
-        {_this call FUNC(sit)},
-        {_this call FUNC(canSit)},
+        {call FUNC(sit)},
+        {call FUNC(canSit)},
         {},
         _forEachIndex,
         _menuPosition,
